@@ -3,8 +3,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider, Spinner } from "@chakra-ui/react";
 import {
 	createBrowserRouter,
-	RouterProvider,
-	useRouteError,
+	RouterProvider
 } from "react-router-dom";
 
 import Error from "./pages/Error/Error";
