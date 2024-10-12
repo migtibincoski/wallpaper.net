@@ -1,10 +1,7 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { ChakraProvider, Spinner } from "@chakra-ui/react";
-import {
-	createBrowserRouter,
-	RouterProvider
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Error from "./pages/Error/Error";
 
