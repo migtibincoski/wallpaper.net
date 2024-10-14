@@ -5,6 +5,7 @@ logs
 *.env
 .env
 *.lock
+yarn.lock
 package-lock.json
 .yarn-integrity
 node_modules
@@ -21,3 +22,11 @@ dist-ssr
 *.sln
 *.sw?
 dist
+
+# Firebase
+firebase.json
+firebase-debug.logs
+firestore.rules
+firestore.indexes.json
+storage.rules
+.firebaserc
