@@ -4,10 +4,11 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "cls && vite",
 		"build": "tsc -b && vite build",
 		"lint": "eslint .",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"emulators": "cls && firebase emulators:start"
 	},
 	"dependencies": {
 		"@chakra-ui/icons": "^2.2.4",
