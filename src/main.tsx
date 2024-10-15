@@ -1,11 +1,14 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { ChakraProvider, SkipNavLink, Spinner } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript, SkipNavLink, Spinner } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Error from "./pages/Error/Error";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+
+import theme from "./theme";
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +22,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/dashboard",
-		element: <div>dashboard</div>,
+		element: <Dashboard />,
 	},
 ]);
 
@@ -28,7 +31,8 @@ if (!document.getElementById("app"))
 
 createRoot(document.getElementById("app")!).render(
 	<StrictMode>
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
+			<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 			<SkipNavLink>Skip to content</SkipNavLink>
 			<Suspense fallback={<Spinner />}>
 				<RouterProvider router={router} />
