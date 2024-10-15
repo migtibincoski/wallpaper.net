@@ -1,6 +1,11 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { ChakraProvider, ColorModeScript, SkipNavLink, Spinner } from "@chakra-ui/react";
+import {
+	ChakraProvider,
+	ColorModeScript,
+	SkipNavLink,
+	Spinner,
+} from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Error from "./pages/Error/Error";
@@ -19,10 +24,12 @@ const router = createBrowserRouter([
 	{
 		path: "/login",
 		element: <Login />,
+		errorElement: <Error />,
 	},
 	{
 		path: "/dashboard",
 		element: <Dashboard />,
+		errorElement: <Error />,
 	},
 ]);
 
