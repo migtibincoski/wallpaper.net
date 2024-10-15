@@ -63,7 +63,14 @@ export default function Home() {
 				>
 					<div
 						className="hero_text"
-						style={{ position: "relative", zIndex: "2" }}
+						style={{
+							position: "relative",
+							zIndex: "2",
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
 					>
 						<Text
 							fontSize="50px"
@@ -74,11 +81,9 @@ export default function Home() {
 								alignItems: "center",
 							}}
 						>
-							<p>
-								<span style={{ textDecoration: "underline" }}>
-									wallpaper.net
-								</span>{" "}
-								is much more than a wallpaper site. <br /> It's where you'll{" "}
+							<p style={{ maxWidth: "75vw" }}>
+								<span style={{ fontWeight: "bold" }}>wallpaper.net</span> is
+								much more than a wallpaper site. It's where you'll{" "}
 								<ReactTyped
 									strings={[
 										"find your daily inspiration",
@@ -98,15 +103,29 @@ export default function Home() {
 								/>
 								.
 							</p>
-							<ButtonGroup className="hero__cta" style={{ marginTop: "25px" }}>
-								<Button size="lg" variant="outline" colorScheme="teal">
-									Login
-								</Button>
-								<Button size="lg" variant="solid" colorScheme="teal">
-									Sign Up
-								</Button>
-							</ButtonGroup>
 						</Text>
+						<ButtonGroup className="hero__cta" style={{ marginTop: "25px" }}>
+							<Button
+								size="lg"
+								variant="outline"
+								colorScheme="teal"
+								onClick={() => {
+									window.location.href = "./login";
+								}}
+							>
+								Login
+							</Button>
+							<Button
+								size="lg"
+								variant="solid"
+								colorScheme="teal"
+								onClick={() => {
+									window.location.href = "./signup";
+								}}
+							>
+								Sign Up
+							</Button>
+						</ButtonGroup>
 					</div>
 
 					<Slider className="carousel">
@@ -173,7 +192,7 @@ const Slider = styled.section`
 	.carousel__wrapper::after {
 		content: "";
 		height: 750px;
-		width: 500px;
+		width: 150px;
 		position: absolute;
 		z-index: 99;
 	}
