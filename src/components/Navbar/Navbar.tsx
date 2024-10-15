@@ -7,11 +7,14 @@ import {
 	MenuButton,
 	MenuList,
 	MenuItem,
-	MenuDivider,
 } from "@chakra-ui/icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { BsPersonFillAdd, BsBoxArrowInRight } from "react-icons/bs";
+
+import { auth } from "../../services/firebase";
 
 type linkObject = {
 	title: string;
@@ -69,17 +72,18 @@ export default function Navbar({
 				>
 					<Avatar
 						size={"sm"}
-						src={
-							"https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-						}
+						name={auth.currentUser?.displayName || auth.currentUser?.email}
+						src={auth.currentUser?.photoURL}
 						id="avatarImage"
 					/>
 				</MenuButton>
-				<MenuList>
-					<MenuItem>Link 1</MenuItem>
-					<MenuItem>Link 2</MenuItem>
-					<MenuDivider />
-					<MenuItem>Link 3</MenuItem>
+				<MenuList style={{ maxWidth: "150px" }}>
+					<MenuItem>
+						<BsBoxArrowInRight style={{ marginRight: "10px" }} /> Login
+					</MenuItem>
+					<MenuItem>
+						<BsPersonFillAdd style={{ marginRight: "10px" }} /> Sign Up
+					</MenuItem>
 				</MenuList>
 			</Menu>
 		</Nav>
@@ -98,6 +102,10 @@ const Nav = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	#avatar {
+		width: 150.55px;
+	}
 
 	& .nav-links {
 		display: flex;
@@ -120,7 +128,7 @@ const Nav = styled.nav`
 		transition: all 0.2s linear;
 	}
 
-	& .#avatar {
+	& #avatar {
 		position: absolute;
 		right: 250px;
 		height: 45px;
@@ -138,15 +146,6 @@ const Nav = styled.nav`
 		color: #4a98f7;
 		transform: translateY(-50%);
 	}
-	& .search-box input {
-		height: 100%;
-		width: 100%;
-		border: none;
-		outline: none;
-		border-radius: 6px;
-		background-color: #fff;
-		padding: 0 15px 0 45px;
-	}
 	& .navOpenBtn,
 	& .navCloseBtn {
 		display: none;
@@ -154,18 +153,9 @@ const Nav = styled.nav`
 	/* responsive */
 	@media screen and (max-width: 1160px) {
 		padding: 15px 100px;
-
-		& .search-box {
-			right: 150px;
-		}
 	}
 	@media screen and (max-width: 950px) {
 		padding: 15px 50px;
-
-		& .search-box {
-			right: 100px;
-			max-width: 400px;
-		}
 	}
 	@media screen and (max-width: 768px) {
 		& .navOpenBtn,
@@ -212,13 +202,6 @@ const Nav = styled.nav`
 			color: #fff;
 			font-size: 20px;
 			cursor: pointer;
-		}
-		& .search-box {
-			top: calc(100% + 10px);
-			max-width: calc(100% - 20px);
-			right: 50%;
-			transform: translateX(50%);
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 		}
 	}
 `;
