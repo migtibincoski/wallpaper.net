@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+*.log*
+
+# Environment variables
+*.env
+.env
+
+# Lock files
+*.lock
+yarn.lock
+package-lock.json
+.yarn-integrity
+
+# Dependency directories
+node_modules
+
+# Build directory
+dist
+dist-ssr
+
+*.local
+
+# vscode settings
+.vscode/*
+!.vscode/extensions.json
+
+# IDE
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Firebase
+firebase.json
+firebase-debug.logs
+firestore.rules
+firestore.indexes.json
+storage.rules
+.firebaserc
