@@ -142,7 +142,7 @@ export default function Login() {
 								colorScheme="teal"
 								paddingX={7}
 								isLoading={isSubmiting}
-								onClick={async (e) => {
+								onClick={async (e: React.MouseEvent<HTMLButtonElement>) => {
 									e.preventDefault();
 									setIsSubmiting(true);
 									setError("");
