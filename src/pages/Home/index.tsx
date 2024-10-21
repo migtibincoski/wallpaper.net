@@ -26,7 +26,6 @@ export default function Home() {
 			<SkipNavContent />
 
 			<Navbar
-				title="wallpaper.net"
 				links={[
 					{
 						title: "Home",
