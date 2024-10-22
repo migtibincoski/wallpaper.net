@@ -96,7 +96,8 @@ export default function Login() {
 
 				<Alert status="error" style={{ display: `${error ? "flex" : "none"}` }}>
 					<AlertIcon />
-					{auth.errorMessages[error] || "An error occurred."}
+					{auth.errorMessages[error] ||
+						`An error occurred: (${error || "unknown"})`}
 				</Alert>
 
 				<Spacer
