@@ -67,6 +67,7 @@ export default function Navbar({ links }: { links: linkObject[] }) {
 				<img
 					src="../../../assets/brand/horizontal_logo_2.png"
 					alt="wallpaper.net logo"
+					style={{ height: "40px" }}
 				/>
 			</a>
 			<ul className="nav-links">
@@ -167,8 +168,8 @@ const Nav = styled.nav`
 	left: 0;
 	width: 100%;
 	padding: 15px 200px;
-	background: #1a202c;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	background: black;
+	box-shadow: 0px 10px 20px 0px black;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -248,7 +249,7 @@ const Nav = styled.nav`
 			padding-top: 100px;
 			row-gap: 30px;
 			flex-direction: column;
-			background-color: #1a202c;
+			background-color: black;
 			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 			transition: all 0.4s ease;
 			z-index: 100;
