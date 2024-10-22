@@ -133,6 +133,8 @@ auth.errorMessages = {
 		"We couldn't find your account. Have you already created your account?",
 	"auth/email-already-in-use":
 		"The email address is already in use. If this is your email address, don't you wanna try log in?",
+	"auth/wrong-password":
+		"The password you provided is incorrect. Try again or reset your password.",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
